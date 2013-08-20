@@ -1,0 +1,38 @@
+.axis path,.axis line{fill: none;stroke: #000;shape-rendering: crispEdges;opacity: 1;}
+.axis text{font-size:10px;}
+body{font: 12px sans-serif;}
+.circles{opacity:0.5;}
+.tipsy{font-size:11px;margin-top:-10px;}
+.guide line{fill: none;stroke: #000;shape-rendering: crispEdges;opacity: 0;}
+.chartOption{margin: 20px; width: 100%;}
+#xrows,#yrows{margin-bottom: 10px;}
+.check{padding-right: 10px;padding-left: 5px;}
+.span7 > input {
+    width: 65px;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    height: 30px;
+}    
+
+.border{
+	border: 1px dotted #000000;
+	border-left: none;
+	border-top:none;
+	border-bottom:none;
+	margin-top:-11px;
+}
+
+.radiobtn{
+	border: 1px dotted #000000;
+	border-left: none;
+	border-top:none;
+	border-bottom:none;
+	padding-left:10px;
+}
+.centeralign{
+	text-align:center !important;
+}
