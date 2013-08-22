@@ -1,0 +1,36 @@
+.borderdiv{
+    border:1px solid #000000;
+    background-color:#ffffff;
+    padding:25px 25px;
+    text-align: center;
+    min-height:135px !important;
+    height:auto;
+    font-weight: bold;
+}
+
+.borderD{
+    border:1px solid #000000;
+    background-color:#ffffff;
+    height:40px;
+}
+a{
+    text-decoration: none !important;
+    color: #000000 !important;
+}
+body{
+    background-color:#000000;
+}
+.text{
+    color:#ffffff;
+}
+
+.subtitle{
+    color:#000000 !important;
+}
+
+.fontstyle{
+    font-size: 16px;
+
+}
+
+

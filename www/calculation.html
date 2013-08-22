@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <title>Bootstrap Grid Theme Demo</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="css/theme.bootstrap.css">
+    <link rel="stylesheet" href="css/application.min.css" type="text/css"/>
+
+
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/jquery.tablesorter.js" type="text/javascript"></script>
+    <script src="js/jquery.tablesorter.widgets.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/utils.js" type="text/javascript"></script>
+    <style>
+        .btncentered{
+            margin: 0;
+            background-color: transparent;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="background-dark">
+<div class="main">
+    <div id="weightCalcUI" style="margin-bottom: 15px;" class="row-fluid"><div class="text-center"> <h1>Weight Calculation</h1> </div></div>
+    <div>
+        <div id="weightUI">
+        </div>
+        <div class="text-center" style="margin-bottom:5px;background-color:#ffffff;color:red;display:none;font-weight:bold;padding:5px 5px;border-radius: 25px;" id="errortxt">
+
+        </div>
+        <div id="btnspace" class="btncentered">
+        </div>
+    </div>
+    <br/>
+    <div id="resultDisplay">
+        <div id="weightCalcUI" class="row-fluid"><div class="text-center"> <h1>Weight Calculation Result</h1> </div></div>
+        <div class="widget">
+            <table id="resultset" class="table table-striped">
+                <thead><tr id="tHeadersresult"></tr></thead>
+                <tbody id="tbodyresult">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="js/calc.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
