@@ -9,7 +9,7 @@
 
 $.getJSON('data/data.json', function(json) {
     if (json) {
-        UpdateTable(json);
+         UpdateTable(json);
     }
 });
 
@@ -29,7 +29,7 @@ $.extend($.tablesorter.themes.bootstrap, {
     even       : '',
     odd        : ''
 });
- 
+
 function UpdateTable(json){
 
     var rows = "",headers = "",len = json.length;
@@ -58,7 +58,7 @@ function UpdateTable(json){
             widthFixed: true,
             headerTemplate : '{content} {icon}',
             sortLocaleCompare: true,
-            widgets : ["uitheme","filter"], 
+            widgets : ["uitheme","filter"],
             widgetOptions : {
                 filter_reset : ".reset"
             }
