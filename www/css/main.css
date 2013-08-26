@@ -40,22 +40,3 @@ body{font: 12px sans-serif;}
 .centeralign .tablesorter-header-inner{
     color:#ffffff !important;
 }
-
-.floatingdiv{
-    position:fixed;
-    bottom:1em;
-    left:1em;
-}
-
-.widget1 {
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    -ms-border-radius: 1px;
-    -o-border-radius: 1px;
-    border-radius: 1px;
-    padding: 10px 12px;
-    color: #f8f8f8;
-    background: rgba(51, 51, 51, 0.9);
-    margin-bottom: 30px;
-    z-index: 1000;
-}

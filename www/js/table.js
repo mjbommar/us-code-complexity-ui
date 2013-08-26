@@ -36,7 +36,7 @@ function UpdateTable(json){
 
     $('#tbodydata').html('');
     for(h_name in json[0]){
-        headers+='<th title="Click here for sorting" class="centeralign"><a href="javascript:void(0);" style="text-decoration:none" rel="tooltip" data-placement="bottom" title="' + h_name +'">' + h_name + '</a></th>';
+        headers+='<th class="centeralign"><a href="javascript:void(0);" style="text-decoration:none" rel="tooltip" data-placement="bottom" title="' + h_name +'">' + h_name + '</a></th>';
     }
 
     $('#tHeaders').html(headers);
@@ -55,7 +55,7 @@ function UpdateTable(json){
     $("#dataT")
         .tablesorter({
             theme: 'bootstrap',
-            widthFixed: true,
+            widthFixed: false,
             headerTemplate : '{content} {icon}',
             sortLocaleCompare: true,
             widgets : ["uitheme","filter"],
