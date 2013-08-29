@@ -375,6 +375,9 @@
 			function buildHeaders(table) {
 				var header_index = computeThIndexes(table), ch, $t,
 					h, i, t, lock, time, c = table.config;
+
+
+
 				c.headerList = [];
 				c.headerContent = [];
 				if (c.debug) {
@@ -503,6 +506,8 @@
 			}
 
 			function initSort(table, cell, e){
+                if(e.target.className == "menuclass")
+                    return;
 				var a, i, j, o, s,
 					c = table.config,
 					k = !e[c.sortMultiSortKey],

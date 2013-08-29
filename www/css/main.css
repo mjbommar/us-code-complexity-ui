@@ -40,3 +40,45 @@ body{font: 12px sans-serif;}
 .centeralign .tablesorter-header-inner{
     color:#ffffff !important;
 }
+
+td{
+    font-size: 12px !important;
+}
+
+th{
+    font-size: 12px !important;
+}
+
+.tablesorter-columnSelector {
+    cursor: default;
+}
+
+.tablesorter-columnSelector label.tablesorterColumnSelector-inputLabel {
+    display: inline;
+    font-family: arial, verdana, sans-serif;
+    cursor: pointer;
+}
+
+.tablesorter-columnSelector input.tablesorterColumnSelector-input {
+    margin-right: 5px !important;
+    vertical-align: top;
+}
+
+.tablesorter-columnSelector label.noshow {
+    color: #999;
+}
+
+.menuclass{
+    position:absolute;
+    right:19px !important;
+    top:40%;
+}
+
+.ctxmenuclass{
+    position: absolute;
+    background-color: #ffffff;
+    border: #404040 1px solid;
+    border-radius: 10px;
+    color:#000000;
+    padding: 5px 5px;
+}

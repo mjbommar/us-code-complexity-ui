@@ -9,6 +9,7 @@
 
 $.getJSON('data/data.json', function(json) {
     if (json) {
+         filter(json)
          UpdateTable(json);
     }
 });
@@ -35,10 +36,15 @@ function UpdateTable(json){
     var rows = "",headers = "",len = json.length;
 
     $('#tbodydata').html('');
+    var i=1;
+    var strHTMLCheckBoxes = "";
     for(h_name in json[0]){
-        headers+='<th class="centeralign"><a href="javascript:void(0);" style="text-decoration:none" rel="tooltip" data-placement="bottom" title="' + h_name +'">' + h_name + '</a></th>';
+        strHTMLCheckBoxes += '<li><input type="checkbox" class="checkbox" checked onchange="toggleCheckBoxes(' + i +',this.checked)" />    '+ h_name +'</li>';
+        headers+='<th class="centeralign"><a href="javascript:void(0);" style="text-decoration:none" rel="tooltip" data-placement="bottom" title="' + h_name +'">' + h_name + '</a><img style="right: 5px;" src="img/selectcol2.png" class="menuclass" onclick="call(event)"/></th>';
+        i++;
     }
 
+    $('#ctxMenuCheckBoxes').html(strHTMLCheckBoxes);
     $('#tHeaders').html(headers);
     $('#tFooter').html(headers);
 
@@ -64,7 +70,41 @@ function UpdateTable(json){
             }
         });
 
-
     $("[rel='tooltip']").tooltip();
+}
+
+function call(e){
+    $("#ctxMenu").hide();
+    e.preventDefault();
+
+    $("#ctxMenu").css('left', parseInt(e.pageX,10)-85);
+    $("#ctxMenu").css('top', parseInt(e.pageY,10));
+    $("#ctxMenu").show();
+}
+
+function hide(event){
+  if(event.target.className == "menuclass" || event.target.className == "checkbox" )
+      $("#ctxMenu").show();
+  else
+      $("#ctxMenu").hide();
+
 
 }
+
+function toggleCheckBoxes(index,val){
+    if(val)
+        $('td:nth-child('+index+'),th:nth-child('+index+')').show();
+    else
+        $('td:nth-child('+index+'),th:nth-child('+index+')').hide();
+}
+
+
+$(document).ready(function(){
+   $("#ctxMenu").hide();
+    $("body").bind('click', hide);
+});
+
+
+
+
+

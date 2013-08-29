@@ -135,3 +135,14 @@
 
     return true;
 }
+
+function filter(arrValue){
+    for(var intIndex=0; intIndex< arrValue.length; intIndex++){
+        var eachObj = arrValue[intIndex];
+        for(var eachproperty in eachObj){
+            if(eachproperty.trim() == "StdDevDepth" || eachproperty.trim() == "TokensStopword" || eachproperty.trim() == "TokensPerSection" || eachproperty.trim() == "NetFlowPerSection" ){
+                delete eachObj[eachproperty];
+            }
+        }
+    }
+}
