@@ -169,8 +169,10 @@ function refreshAll(propertiestoshow){
     var strHTMLCheckBoxes = "";
 
     for(h_name in datadisplay[0]){
-        strHTMLCheckBoxes += '<li><input type="checkbox" class="checkbox" checked onchange="toggleCheckBoxes(' + i +',this.checked)" />    '+ h_name +'</li>';
-        headers+='<th class="centeralign"><a href="javascript:void(0);" style="text-decoration:none" rel="tooltip" data-placement="bottom" title="' + h_name +'">' + h_name + '</a><img style="right: 5px;" src="img/selectcol2.png" class="menuclass" onclick="call(event)"/></th>';
+        // strHTMLCheckBoxes += '<li><input type="checkbox" class="checkbox" checked onchange="toggleCheckBoxes(' + i +',this.checked)" />    '+ h_name +'</li>';
+        // headers+='<th class="centeralign"><a href="javascript:void(0);" style="text-decoration:none" rel="tooltip" data-placement="bottom" title="' + h_name +'">' + h_name + '</a><img style="right: 5px;" src="img/selectcol2.png" class="menuclass" onclick="call(event)"/></th>';
+        strHTMLCheckBoxes += '<li><input id="columnCheckbox_'+i+'" name="'+ h_name +'" type="checkbox" class="checkbox" checked  />    '+ h_name +'</li>';
+        headers+='<th class="centeralign"><a href="javascript:void(0);" style="text-decoration:none" rel="tooltip" data-placement="bottom" title="' + h_name +'">' + h_name + ' </a><img style="right: 5px;height:12px;" src="img/selectcol2.png" class="menuclass" onclick="call(event)"/></th>';
         i++;
     }
     $('#ctxMenuCheckBoxes').html(strHTMLCheckBoxes);
@@ -202,6 +204,10 @@ function refreshAll(propertiestoshow){
 
     $("[rel='tooltip']").tooltip();
     $("#resultDisplay").show();
+    // bind the checkboxs change event
+    $("input[type='checkbox']").change(function(e) {
+        toggleCheckBoxes(this);
+    });
 }
 
 function call(e){
@@ -222,7 +228,10 @@ function hide(event){
 
 }
 
-function toggleCheckBoxes(index,val){
+function toggleCheckBoxes(checkbox){
+    id = checkbox.id;
+    index = id.substr(id.indexOf('_')+1)
+    val = checkbox.checked;
     if(val)
         $('td:nth-child('+index+'),th:nth-child('+index+')').show();
     else
