@@ -5,7 +5,7 @@
  * Time: 12:30 PM
  * To change this template use File | Settings | File Templates.
  */
- 
+
 var HIDDEN_COLUMNS = ["StdDevDepth","TokensStopword","TokensPerSection","NetFlowPerSection"];
 
 $.getJSON('data/data.json', function(json) {
@@ -39,8 +39,12 @@ function UpdateTable(json){
     var i=1;
     var strHTMLCheckBoxes = "";
     for(h_name in json[0]){
+        var test = document.getElementById("Test");
+        test.innerHTML = h_name;
+        var width = (test.clientWidth + 30) + "px";
+
         strHTMLCheckBoxes += '<li><input id="columnCheckbox_'+i+'" name="'+ h_name +'" type="checkbox" class="checkbox" checked  />    '+ h_name +'</li>';
-        headers+='<th class="centeralign"><a href="javascript:void(0);" style="text-decoration:none" rel="tooltip" data-placement="bottom" title="' + h_name +'">' + h_name + ' </a><img style="right: 5px;height:12px;" src="img/selectcol2.png" class="menuclass" onclick="call(event)"/></th>';
+        headers+='<th style="width:'+width+'!important;"><a href="javascript:void(0);" style="text-decoration:none" rel="tooltip" data-placement="bottom" title="' + h_name +'">' + h_name + ' </a><img style="right: 5px" src="img/selectcol2.png" class="menuclass" onclick="call(event)"/></th>';
         i++;
     }
 
@@ -80,7 +84,7 @@ function UpdateTable(json){
 }
 
 function call(e){
-    e.preventDefault();
+//    e.preventDefault();
     $("#ctxMenu").hide();
     $("#ctxMenu").css('left', parseInt(e.pageX,10)-85);
     $("#ctxMenu").css('top', parseInt(e.pageY,10)+20);
@@ -94,6 +98,7 @@ function defaultSetting(){
             $(this).trigger('click');
         }
     });
+    $("#ctxMenu").hide();
 }
 function hide(event){
   if(event.target.className == "menuclass" || event.target.className == "checkbox" )
@@ -106,6 +111,9 @@ function toggleCheckBoxes(checkbox){
     id = checkbox.id;
     index = id.substr(id.indexOf('_')+1)
     val = checkbox.checked;
+    //$("body").css("width",($('table').width() + parseInt((0.05 * screen.width),10)) + "px");
+    //$("body").css("background-size",($('table').width() + parseInt((0.05 * screen.width),10) + 10) + "px");
+
     if(val)
         $('td:nth-child('+index+'),th:nth-child('+index+')').show();
     else
@@ -114,6 +122,8 @@ function toggleCheckBoxes(checkbox){
 
 
 $(document).ready(function(){
-    $("#ctxMenu").hide();
+//    $("#ctxMenu").hide();
+   // $("body").css("width",($('table').width() + parseInt((0.05 * screen.width),10)) + "px");
+    //$("body").css("background-size",($('table').width() + parseInt((0.05 * screen.width),10)) + "px");
     $("body").bind('click', hide);
 });

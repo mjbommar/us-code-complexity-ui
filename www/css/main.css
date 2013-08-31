@@ -70,15 +70,23 @@ th{
 
 .menuclass{
     position:absolute;
-    right:19px !important;
+    right:18px !important;
     top:40%;
 }
 
 .ctxmenuclass{
+    display: none;
     position: absolute;
     background-color: #ffffff;
     border: #404040 1px solid;
     border-radius: 10px;
     color:#000000;
     padding: 5px 5px;
+}
+#Test
+{
+    position: absolute;
+    visibility: hidden;
+    height: auto;
+    width: auto;
 }
